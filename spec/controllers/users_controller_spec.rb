@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe UsersController, type: :controller, :focus => true do
   let(:valid_params) {{ name: "Josh Teng", email: "josh@na.com", password: "123456", password_confirmation: "123456"}}
   let(:invalid_params) {{ name: "Josh Teng", email: "joshna.com", password: "123456", password_confirmation: "123456"}}
   let(:valid_params_update) {{ name: "Josh", email: "josh@nextacademy1.com", password: "123456", password_confirmation: "123456"}}
