@@ -8,4 +8,8 @@ class User < ApplicationRecord
 	validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Invalid email format!" }
 
 	has_secure_password # also validates presence
+
+	def self.authenticate(session_params)
+		User.find_by(email: session_params[:email]).try(:authenticate, session_params[:password])
+	end
 end
